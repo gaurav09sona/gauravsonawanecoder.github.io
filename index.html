@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Sonawane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="C:\Users\gaura\OneDrive\Desktop\codes\web dev\my portfolio\style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #2b1f37;
+            color: rgb(245, 233, 233);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(2, 2, 52);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 20px;
+            transition: 0.5s;
+        }
+
+        nav ul li a {
+            position: relative;
+            text-decoration: none;
+            padding: 5px;
+            font-size: small;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+
+        nav ul li a:hover {
+            transform: scale(1.1);
+            opacity: 1;
+            filter: blur(10);
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+            transform-origin: right;
+            transform: scaleX(0);
+            z-index: -1;
+        }
+
+        nav ul li a:hover:before {
+            transition: transform 0.5s;
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        .dropdown-content .mail {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-content .phone {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-content .phone span {
+            flex: 1;
+        }
+
+        .dropdown-content .mail img {
+            height: 25px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .dropdown-content .phone img {
+            height: 23px;
+            width: auto;
+            opacity: 0.9;
+            margin-right: 10px;
+        }
+
+        @font-face {
+            src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2") format("woff2");
+            font-family: "Meta";
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .left {
+            position: relative;
+            transition: all 0.5s;
+            -webkit-text-stroke: 2px #d6f4f4;
+            font-variation-settings: "wght" 900, "ital" 1;
+            font-size: 2rem;
+            text-align: center;
+            color: transparent;
+            font-family: "Meta", sans-serif;
+            text-shadow: 5px 5px 0px #07bccc,
+                15px 15px 0px #482896,
+        }
+
+        .left:hover {
+            font-variation-settings: "wght" 100, "ital" 0;
+            text-shadow: none;
+        }
+
+        .FirstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 23px 0;
+        }
+
+        .leftsection {
+            font-size: 2.5rem;
+            margin: 80px 0;
+        }
+
+        .FirstSection>div {
+            width: 30%;
+        }
+
+        .rightsection img {
+            width: 100%;
+            margin: 25px 0;
+        }
+
+        .COLOR {
+            color: blueviolet;
+        }
+
+        #element {
+            color: blueviolet;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            height: 194px;
+        }
+
+        footer .sections .sec-section a img {
+            height: 25px;
+            width: 25px;
+            margin: 10px;
+        }
+
+        footer .sections .third-section a img {
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+        }
+
+        footer .sections .forth-section a img {
+            height: 22px;
+            width: 22px;
+            margin: 10px;
+        }
+
+        footer .sections .fifth-section a img {
+            height: 25px;
+            width: 25px;
+            margin: 10px;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(0, 0, 50);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        nav .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        nav .dropdown-content li {
+            display: block;
+        }
+
+        nav .dropdown-content .divider {
+            height: 1px;
+            margin: 5px 0;
+            background-color: #ddd;
+        }
+
+        .res {
+            display: inline-block;
+            width: 220px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: rgb(20, 1, 26);
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            text-decoration: none;
+            /* Add this line to remove underlines */
+        }
+
+        .res:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .res:active {
+            color: rgb(20, 1, 26)
+        }
+
+        .res:active:after {
+            background: transparent;
+        }
+
+        .res:hover:before {
+            opacity: 1;
+        }
+
+        .res:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgb(20, 1, 26);
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .dropdown-content img {
+            height: 20px;
+            width: auto;
+        }
+
+        .dropdown-content span {
+            justify-content: space-between;
+        }
+
+        .dropdown-content li {
+            justify-content: space-between;
+        }
+
+        @font-face {
+            src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2") format("woff2");
+            font-family: "Meta";
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .COLOR {
+            color: blueviolet;
+        }
+
+        #element {
+            color: blueviolet;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            height: 150px;
+            overflow-x: hidden;
+        }
+
+        footer .sections .sec-section a img {
+            height: 25px;
+            width: 25px;
+            margin: 10px;
+        }
+
+        footer .sections .third-section a img {
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+        }
+
+        footer .sections .forth-section a img {
+            height: 22px;
+            width: 22px;
+            margin: 10px;
+        }
+
+        footer .sections .fifth-section a img {
+            height: 25px;
+            width: 25px;
+            margin: 10px;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: -7px;
+        }
+
+        footer span {
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .all-rights-reserved {
+            text-align: center;
+            margin-top: -6px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        #about {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: center;
+        }
+
+        #about .about,
+        #about .p {
+            margin-bottom: 28px;
+            text-align: start;
+            font-size: large;
+        }
+
+        #about .p {
+            font-style: italic;
+        }
+
+        #string {
+            color: blueviolet;
+        }
+
+        footer .size {
+            font-size: larger;
+        }
+
+        .size {
+            margin: -13px;
+        }
+
+        footer .well {
+            margin: 30px;
+        }
+
+        .table-divider {
+            height: 1px;
+            margin: 25px;
+            overflow-x: hidden;
+        }
+
+        .about-me {
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .edu {
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .about-para {
+            text-align: center;
+            justify-content: space-around;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            overflow-x: hidden;
+            margin-left: 144px;
+            margin-right: 144px;
+        }
+
+        .edu-para {
+            text-align: center;
+            justify-content: space-around;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            overflow-x: hidden;
+        }
+
+        .about-para p {
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: justify;
+            overflow-x: hidden;
+        }
+
+        .edu-para p {
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: justify;
+            overflow-x: hidden;
+            margin-left: 144px;
+            margin-right: 144px;
+        }
+
+        .skill {
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .para-skill {
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: justify;
+            overflow-x: hidden;
+            margin-left: 144px;
+            margin-right: 144px;
+        }
+
+        .institute {
+            margin: 25px;
+        }
+
+        .institute ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .custom-details summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .custom-details {
+            border: 1px solid #ccc;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .custom-details ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .face-img img {
+            height: 55px;
+            width: auto;
+            margin-left: 25px;
+        }
+
+        .container-face {
+            display: flex;
+            align-items: center;
+        }
+
+        .face-img,
+        .left {
+            flex: 0;
+            padding: 10px;
+        }
+
+        .skill-imgs {
+            height: 15px;
+            width: auto;
+        }
+
+        .download-button {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgb(172, 158, 210);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            background-color: #240858a8;
+        }
+
+        .download-button:active {
+            background-color: #c1a2d6;
+        }
+
+        .download-button a {
+            text-decoration: none;
+        }
+
+        .button-certi {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgb(172, 158, 210);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button-certi:hover {
+            background-color: #240858a8;
+        }
+
+        .button-certi:active {
+            background-color: #c1a2d6;
+        }
+
+        .button-certi a {
+            text-decoration: none;
+        }
+
+        .size {
+            margin: -13px;
+        }
+
+        footer .well {
+            margin: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: 144px;
+            margin-right: 144px;
+        }
+
+        #badge {
+            margin-left: 0px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 0px solid #ddd;
+        }
+
+        th {
+            color: white;
+            text-transform: uppercase;
+        }
+
+        td {
+            color: white;
+        }
+
+        tr:hover td {
+            background-color: rgb(41, 41, 97);
+        }
+
+        .certi {
+            cursor: pointer;
+            width: 100px;
+            height: 30px;
+        }
+
+        .table-divider {
+            height: 1px;
+            margin: 25px;
+            margin-left: 144px;
+            margin-right: 144px;
+            overflow-x: hidden;
+        }
+
+        #certificates {
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        #project {
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .certi-para {
+            text-align: center;
+            justify-content: space-around;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            overflow-x: hidden;
+        }
+
+        .certi-para p {
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: justify;
+            overflow-x: hidden;
+            margin-left: 144px;
+            margin-right: 144px;
+        }
+
+        .face-img img {
+            height: 55px;
+            width: auto;
+            margin-left: 25px;
+        }
+
+        .container-face {
+            display: flex;
+            align-items: center;
+        }
+
+        .face-img,
+        .left {
+            flex: 0;
+            padding: 10px;
+        }
+
+        button {
+            width: 250px;
+            text-align: center;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        button {
+            background-color: transparent;
+            border: 3px solid #00d7c3;
+            border-radius: 15px;
+            -webkit-transition: all .15s ease-in-out;
+            transition: all .15s ease-in-out;
+            color: #00d7c3;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+            border: 3px solid #00d7c3;
+        }
+
+        .certi a {
+            color: #00d7c3;
+            text-decoration: none;
+        }
+
+
+
+        .project {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 54px;
+            background-color: #240858a8;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 38px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .project h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1F0650;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project a:hover {
+            background-color: #240858a8;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <nav>
+                <div class="container-face">
+                    <div class="face-img"><img src="facemoji.png" alt=""></div>
+                    <div class="left">Gaurav</div>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="index.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="#">Work</a>
+                            <ul class="dropdown-content">
+                                <li><a href="index.html #certificates">Certification</a></li>
+                                <li class="divider"></li>
+                                <li><a href="index.html #project">Projects</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Contact me</a>
+                            <ul class="dropdown-content">
+                                <li class="mail"><img src="mail2.png" alt=""><span>gauravsonawane957@gmail.com</span>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="phone"><img src="phone.png" alt=""><span> +91-9081975006</span>
+                                </li>
+                            </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="FirstSection">
+                <div class="leftsection">
+                    <div> it's <span class="COLOR">Gaurav</span> here.</div>
+                    <span id="element"></span>
+                    <div class="res-button">
+                        <a href="OFF_CAMP_NEW_RESUME.pdf" target="_blank" class="res">Get my Resume</a>
+                    </div>
+
+                </div>
+                <div class="rightsection">
+                    <img src="bgimg.png" alt="">
+                </div>
+            </section>
+            <div>
+                <h2 class="about-me">About me</h2>
+            </div>
+            <div class="about-para">
+                <p>
+                    Greetings! I am a passionate, and creative developer,I have knowledge in both design and
+                    development of web applications and still exploring other technologies and frameworks that catches
+                    my interest and would love to work with. With a great knowledge in HTML, CSS, JAVASCRIPT, DATABASES,
+                    GITHUB,JAVA, PYTHON, PHP. I thrive on bringing creativity and innovation to every project I
+                    undertake. My journey in B.TECH/CSE has equipped me with a keen eye for detail, a knack for
+                    problem-solving, and a commitment to delivering results. I am always eager to explore new challenges
+                    and push the boundaries of what is possible. Beyond my technical proficiency, I believe in effective
+                    collaboration and communication, values that I consistently integrate into my work. I am excited to
+                    contribute my skills and enthusiasm to projects that not only meet but exceed expectations. Let's
+                    embark on a journey of creativity, growth, and success together.</p>
+            </div>
+
+            <div class="table-divider"></div>
+            <div>
+                <h2 class="edu">Education</h2>
+            </div>
+            <div class="edu-para">
+                <p>
+                    I am pursuing B.TECH in [COMPUER SCIENCE AND ENGINEERING from PARUL UNIVERSITY, where I honed my
+                    skills and gained in-depth knowledge of programming languages (java,python,c++). During my academic
+                    journey, I consistently demonstrated a strong commitment to academic excellence, earning some of the
+                    important certificates. Additionally, I actively engaged in projects based on compuer vision and
+                    algorithms and gained some imortant knowledge. My academic experience has equipped me with a solid
+                    foundation in fields like web development, app devolopment, machine learning, compuer vision, oops
+                    concepts, DSA,databases. Preparing me to navigate the dynamic challenges of the professional
+                    landscape in Computer science and engineering. I am a lifelong learner, committed to staying abreast
+                    of emerging trends and continuously refining my skills to ensure I remain at the forefront of my
+                    field.
+                </p>
+            </div>
+            <div class="institute">
+                <ul>
+                    <li>
+                        <h4><span class="college">College</span></h4>
+                        <ul>
+                            <li>Parul institute of technology</li>
+                            <li>B.tech</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><span class="college">HSC</span></h4>
+                        <ul>
+                            <li>Saraswati vidyalaya</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><span class="college">SCC</span></h4>
+                        <ul>
+                            <li>MGSV School</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="table-divider"></div>
+            <div class="skill">
+                <h2 class="skill-heading">Skill</h2>
+            </div>
+            <div class="table-divider"></div>
+            <div class="para-skill">
+                <p>
+                    My skill set encompasses a diverse range of competencies that synergize to contribute to my
+                    effectiveness in B.TECH/CSE. Proficient in programming languages (JAVA, PYTHON, C++, javascript),
+                    MySQL, Android Studio. I bring a depth of technical expertise that is complemented by my strong
+                    analytical and problem-solving skills. My proficiency in web designing, python, java, computer
+                    vision, machine learning has allowed me to do projects based on it, showcasing my ability to
+                    translate technical knowledge into tangible results. Additionally, my dedication to staying abreast
+                    of emerging trends in the industry ensures that my skill set remains dynamic and adaptable. Beyond
+                    technical acumen, my skill set extends to effective communication, collaboration, and project
+                    management, allowing me to seamlessly integrate into cross-functional teams and deliver
+                    comprehensive solutions. I am passionate about continuous learning and innovation, and I am
+                    committed to leveraging my skill set to drive success in every endeavor.
+                </p>
+                <details class="custom-details">
+                    <summary>My Key Skills</summary>
+                    <ul class="skill-set">
+                        <li><img src="webdev.png" alt="" class="skill-imgs">Web Designing</li>
+                        <li><img src="androiddev.png" alt="" class="skill-imgs">MySQL</li>
+                        <li><img src="Python.png" alt="" class="skill-imgs">PYTHON</li>
+                        <li><img src="java.png" alt="" class="skill-imgs">JAVA</li>
+                    </ul>
+                </details>
+            </div>
+        </main>
+    </div>
+    <div class="table-divider"></div>
+    <div>
+        <h2 id="certificates">Certificates</h2>
+    </div>
+    <div class="certi-para">
+        <p>
+            My professional journey is commitment of learning and skills development, a
+            commitment underscored by the acquisition of various certifications. I've earned certifications of Docker
+            Essentials: A
+            Developer Introduction, Data Analysis with Python (provided by IBM) , Data Science 101 (provided by
+            IBM),Machine Learning with
+            Python (provided by IBM) and Badges from AWS (Getting started with Networking).
+            stands as a testament to my expertise in Machine Learning. Issued by (provided by IBM), it attests to my
+            comprehensive understanding and proficiency in Python,
+            acquired through rigorous training and examination. This certification, earned in june 2023, equips me with
+            the tools necessary to navigate and solve complex challenges within the realm of machine learning
+            algorithms. In addition, the Docker Essentials: A Developer Introduction, in july 2023. Another certiication
+            from Machine Learning with python by Imb in may 2023. Its acquisition further enhances my ability to
+            contribute effectively to projects, emphasizing my dedication to excellence and staying current with
+            industry best practices. Lastly, the Data Science 101 , earned in july 2023, solidifies my expertise in
+            Python and important libraries. These certifications collectively demonstrate my commitment to professional
+            development, ensuring that I possess the knowledge and skills needed to excel in the ever-evolving landscape
+            of Computer Science and engineering.
+        </p>
+    </div>
+    <table>
+        <tr>
+            <th>Sr no.</th>
+            <th>Certificates</th>
+            <th>View Certificate</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Docker Essentials: A Developer Introduction</td>
+            <td><button class="certi" type="button"><a href="Docker Essentials.pdf" target="_blank">View</a></button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Data Analysis with PYTHON (Provided by IBM)</td>
+            <td><button class="certi" type="button"><a
+                        href="IBM DATA ANALYSIS WITH PYTHON Certificate _ Cognitive Class.pdf"
+                        target="_blank">View</a></button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Data Science 101 (provided by IBM)</td>
+            <td><button class="certi" type="button"><a href="IBM DS0101EN Certificate _ Cognitive Class.pdf"
+                        target="_blank">View</a></button>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Machine Learning (provided by IBM)</td>
+            <td><button class="certi" type="button"><a href="machine learning with python.pdf" target="_blank">View</a>
+                </button></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Getting started with Databases (Provided by AWS)</td>
+            <td><button class="certi" type="button"><a href="badge2.pdf" target="_blank">View</a>
+                </button></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Getting started with Networking (Provided by AWS)</td>
+            <td><button class="certi" type="button"><a href="badge1.pdf" target="_blank">View</a>
+                </button></td>
+        </tr>
+    </table>
+    <div class="table-divider"></div>
+
+    <div>
+        <h2 id="project">Projects</h2>
+    </div>
+    <div class="table-divider"></div>
+    <section class="project">
+        <h2>2D -Maze Solver Using A* Algorithm</h2>
+        <p>
+            A maze is one type of puzzle where we have given starting point and destination point with obstacles. We
+            have to find path from starting point to destination point. In this project Python Language is used and
+            PyGame module is used for making GUI. We are using A* Algorithm for finding minimal path from starting point
+            to destination. The pathfinding algorithm solves the problem of determining the shortest path from origin to
+            destination while avoiding obstacles. Agent movement is one of the most difficult challenges in designing
+            realistic Artificial Intelligence (AI) in computer games. Pathfinding strategies are typically used as the
+            foundation of any AI movement system. The A* search algorithm is used in this work to find the shortest path
+            between the source and destination on an image representing a map or a maze. Finding a way out of a maze is
+            a fundamental computer science problem that can take many forms. Pathfinding and graph traversal make
+            extensive use of the A* algorithm. To test the system's performance, various map and maze images are used
+            (100 images for each map and maze).The overall performance of the system is acceptable, and it can find the
+            shortest path between two points on the images. More than 85% of images can find the shortest path between
+            the two points of interest.
+        </p>
+        <a href="https://github.com/gaurav09sona/minor-project-6th-sem" target="_blank">View Project</a>
+    </section>
+
+    <section class="project">
+        <h2>Hand movement indicator(Hand Identifier)</h2>
+        <p>
+            In this innovative project, I utilized the powerful combination of cvZone and OpenCV libraries to develop a
+            sophisticated hand gesture and movement tracking system. Leveraging computer vision technology, the system
+            captures and analyzes intricate hand movements in real-time, providing a dynamic and responsive interface.
+            The cvZone library enhances the functionality, offering a user-friendly approach to hand gesture
+            recognition, while OpenCV provides the backbone for robust image processing and computer vision tasks. This
+            project not only showcases the seamless integration of these cutting-edge libraries but also opens the door
+            to a myriad of applications, from interactive user interfaces to virtual reality experiences. The synergy
+            between cvZone and OpenCV empowers the tracking system with accuracy and versatility, making it a compelling
+            solution for applications where precise hand movement analysis is crucial.
+        </p>
+        <a href="https://github.com/gaurav09sona/individual-project" target="_blank">View Project</a>
+    </section>
+
+    <section class="project">
+        <h2>Personal portfolio</h2>
+        <p>
+            In the development of my personal portfolio, I harnessed the dynamic trio of HTML5, CSS, and JavaScript to
+            craft a visually appealing and interactive online showcase of my skills and accomplishments. HTML5 provided
+            the structural foundation, enabling the creation of a well-organized and responsive layout that seamlessly
+            adapts to various screen sizes. The styling prowess of CSS was employed to enhance the aesthetic appeal,
+            ensuring a visually engaging presentation that reflects my personal brand. Leveraging JavaScript, I
+            incorporated interactive elements and dynamic features to elevate user engagement, such as smooth
+            transitions, interactive buttons, and a user-friendly navigation experience. This project not only serves as
+            a virtual representation of my professional journey but also underscores my proficiency in front-end web
+            development technologies. The amalgamation of HTML5, CSS, and JavaScript has allowed me to encapsulate my
+            personality and skills in a digital space, providing visitors with an immersive and memorable experience
+            while showcasing my expertise in web development.
+        </p>
+        <a href="https://www.project3link.com" target="_blank">View Project 3</a>
+    </section>
+
+</html>
+</main>
+
+<footer>
+    <h2 class="well">
+        <span>thanks for visiting</span>
+    </h2>
+    <div class="size"><span id="string"></span></div>
+    <section class="sections">
+        <div class="sec-section">
+            <a href="https://github.com/gaurav09sona" class="main pic" target="_blank"> <img src="git.png" alt="main pic">
+            </a>
+        </div>
+        <div class="third-section">
+            <a href="https://www.youtube.com/channel/UC5vdozQ4uSbGMGV8WzgW-0Q" class="main pict" target="_blank">
+                <img src="yt.png" alt="main pict"> </a>
+        </div>
+        <div class="forth-section">
+            <a href="https://www.instagram.com/gauravsonawane__" class="main pic" target="_blank"> <img src="ig.png"
+                    alt="main pic"> </a>
+        </div>
+        <div class="fifth-section">
+            <a href="https://www.linkedin.com/in/gaurav-sonawane-943b35244/" class="main pic" target="_blank">
+                <img src="nkd.png" alt="main pic"> </a>
+        </div>
+    </section>
+
+    <p class="all-rights-reserved">&copy; 2023 GAURAV SONAWANE. All rights reserved.</p>
+</footer>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<!-- Setup and start animation! -->
+<script>
+    var typed = new Typed('#element', {
+        strings: ['A Web Designer', 'JAVA Programmer', 'PYTHON Programmer'],
+        typeSpeed: 30,
+        loop: true,
+    });
+</script>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<!-- Setup and start animation! -->
+<script>
+    var typed = new Typed('#string', {
+        strings: ['My Social Media Handle'],
+        typeSpeed: 30,
+        loop: true,
+    });
+</script>
+<script type="text/javascript">
+    function doSearch01(Search01) { window.open('https://www.google.com/search?q=ext%3Apdf+' + Search01, 'Search01window'); }
+</script>
+</body>
+
+</html>
